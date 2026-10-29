@@ -1,0 +1,28 @@
+# راه‌اندازی دیتابیس (Prisma + SQLite)
+
+## ۱. نصب پکیج‌ها (در ریشه‌ی پروژه، کنار پوشه‌ی src)
+npm install @prisma/client@6 bcryptjs
+npm install -D prisma@6 @types/bcryptjs
+
+> نسخه‌ی Prisma را روی 6 نگه دارید؛ schema.prisma با نسخه‌ی 7 سازگار نیست.
+
+## ۲. تنظیمات
+- فایل `.env.example` را به `.env` کپی کنید و مقادیر را عوض کنید
+  (SESSION_SECRET و ADMIN_PASSWORD حتماً).
+- در package.json این بخش را اضافه کنید:
+  "prisma": { "seed": "node prisma/seed.js" }
+- در .gitignore این‌ها را اضافه کنید: .env و prisma/*.db
+
+## ۳. ساخت دیتابیس
+npx prisma generate
+npx prisma db push
+npx prisma db seed
+
+بعد `npm run dev` و ورود از /login با ADMIN_USERNAME / ADMIN_PASSWORD.
+
+## جدول‌ها
+- Admin: کاربران پنل (رمز با bcrypt هش می‌شود)
+- Game: بازی‌ها (صفحه‌ی /games و پنل ادمین)
+- Message: پیام‌های فرم تماس (پنل ادمین ← پیام‌ها)
+
+برای دیدن محتوای دیتابیس: npx prisma studio

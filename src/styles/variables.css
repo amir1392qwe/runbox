@@ -1,0 +1,26 @@
+:root {
+  /* Colors */
+  --color-bg: #050505;
+  --color-surface: #101010;
+  --color-border: #202020;
+
+  --color-text: #ffffff;
+  --color-text-muted: #8b8b8b;
+
+  --color-accent: #ffffff;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  /* Container */
+  --container: 1440px;
+
+  /* Spacing */
+  --space-section: 10rem;
+
+  /* Transition */
+  --ease: cubic-bezier(.76,0,.24,1);
+  --duration: .6s;
+}
